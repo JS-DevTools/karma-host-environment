@@ -1,0 +1,42 @@
+{
+  "name": "karma-host-environment",
+  "description": "Provides host environment info (user agent, Node.js version, environment variables, etc.)",
+  "keywords": [
+    "karma-plugin",
+    "karma-framework",
+    "mocha",
+    "test",
+    "host",
+    "environment",
+    "browser",
+    "user agent",
+    "environment variables"
+  ],
+  "authors": [
+    {
+      "name": "James Messinger",
+      "homepage": "http://jamesmessinger.com"
+    }
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/BigstickCarpet/karma-host-environment",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/BigstickCarpet/karma-host-environment.git"
+  },
+  "main": "dist/karma-host-environment.js",
+  "ignore": [
+    "/bower_components",
+    "/dist/*.test.js",
+    "/docs",
+    "/lib",
+    "/test",
+    "/.*",
+    "/*.js",
+    "/*.json",
+    "/*.txt",
+    "/*.yml"
+  ],
+  "dependencies": {},
+  "devDependencies": {}
+}
