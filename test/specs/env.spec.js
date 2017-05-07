@@ -12,7 +12,16 @@
 
       for (var i = 0; i < keys.length; i++) {
         var key = keys[i];
-        expect(key).to.match(/^\w+$/);
+        var allowedCharacters;
+
+        if (host.os.windows) {
+          allowedCharacters = /^[a-zA-Z0-9_()]+$/;
+        }
+        else {
+          allowedCharacters = /^[a-zA-Z0-9_]+$/;
+        }
+
+        expect(key).to.match(allowedCharacters);
       }
     });
 
