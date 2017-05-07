@@ -1,0 +1,48 @@
+# Travis CI config
+# http://docs.travis-ci.com/user/languages/javascript-with-nodejs/
+# https://docs.travis-ci.com/user/customizing-the-build/
+# https://docs.travis-ci.com/user/migrating-from-legacy/
+
+sudo: false
+language: node_js
+matrix:
+  include:
+    # Node
+    - node_js: 4
+    - node_js: 5
+    - node_js: 6
+    - node_js: 7
+
+    # Browsers
+    - node_js: 4
+      env: KARMA=true
+
+  # Don't include web browser tests in the TravisCI status badge
+  # (SauceLabs has its own per-browser status badge)
+  fast_finish: true
+  allow_failures:
+    - env: KARMA=true
+
+before_script:
+  # Link the package to itself (so Karma and Mocha can find it)
+  - npm link
+  - npm link karma-host-environment
+
+  # Setup a virtual display for browser testing
+  - export DISPLAY=:99.0
+  - sh -e /etc/init.d/xvfb start
+
+script:
+  - npm run lint
+  - npm run cover
+
+after_success:
+  # concatenate all code-coverage data into a single file
+  - ls -R1 coverage/*/lcov.info
+  - cat coverage/*/lcov.info > ./coverage/lcov.info
+
+  # send code-coverage data to Codacy
+  - cat ./coverage/lcov.info | node_modules/.bin/codacy-coverage -p .
+
+  # send code-coverage data to Coveralls
+  - cat ./coverage/lcov.info | node_modules/coveralls/bin/coveralls.js
