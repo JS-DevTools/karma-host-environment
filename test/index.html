@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <head lang="en">
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Karma Host Environment Tests</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mocha/3.1.2/mocha.min.css"/>
+
+    <style>
+      #host-info {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 220px;
+        padding: 10px;
+        font-family: monospace;
+        font-size: 8pt;
+        background: #ccc;
+      }
+
+      #host-info dt {
+        display: block;
+        margin: 0;
+        font-weight: bold;
+      }
+
+      #host-info dd {
+        display: block;
+        margin: 0 0 0 1em;
+        margin-bottom: 1em;
+      }
+
+      #host-info #host {
+        white-space: pre;
+      }
+
+      #mocha {
+        margin-left: 250px !important;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="host-info">
+      <dl>
+        <dt>User Agent:</dt>
+        <dd id="user-agent"></dd>
+        <dt>host:</dt>
+        <dd id="host"></dd>
+      </dl>
+    </div>
+
+    <div id="mocha"></div>
+
+    <!-- Third-Party Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mocha/3.1.2/mocha.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chai/3.5.0/chai.min.js"></script>
+
+    <!-- Karma Host Environment -->
+    <script src="../dist/karma-host-environment.js"></script>
+
+    <!-- Test Fixtures -->
+    <script src="fixtures/config.js"></script>
+    <script src="fixtures/globals.js"></script>
+
+    <!-- Test Specs -->
+    <script src="specs/host.spec.js"></script>
+    <script src="specs/node.spec.js"></script>
+    <script src="specs/karma.spec.js"></script>
+    <script src="specs/os.spec.js"></script>
+    <script src="specs/browser.spec.js"></script>
+    <script src="specs/env.spec.js"></script>
+
+    <script>
+      document.getElementById('user-agent').innerText = navigator.userAgent;
+      document.getElementById('host').innerText = JSON.stringify(host, null, 2);
+
+      mocha.run();
+    </script>
+  </body>
+</html>
