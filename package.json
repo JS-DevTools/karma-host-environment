@@ -1,6 +1,6 @@
 {
   "name": "karma-host-environment",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Provides host environment info (user agent, Node.js version, environment variables, etc.)",
   "keywords": [
     "karma-plugin",

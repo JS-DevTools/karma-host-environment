@@ -1,5 +1,5 @@
 /*!
- * Karma Host Environment v1.0.0 (May 7th 2017)
+ * Karma Host Environment v1.0.1 (May 7th 2017)
  * 
  * https://github.com/bigstickcarpet/karma-host-environment
  * 
