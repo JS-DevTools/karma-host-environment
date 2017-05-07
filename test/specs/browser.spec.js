@@ -79,13 +79,14 @@
    * @returns {object}
    */
   function getCurrentBrowser () {
-    return Object.keys(host.browser)
-      .map(function (key) {
-        return host.browser[key];
-      })
-      .find(function (value) {
-        return typeof value === 'object';
-      });
+    var keys = Object.keys(host.browser);
+
+    for (var i = 0; i < keys.length; i++) {
+      var currentBrowser = host.browser[keys[i]];
+      if (typeof currentBrowser === 'object') {
+        return currentBrowser;
+      }
+    }
   }
 
 }());
