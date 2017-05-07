@@ -1,0 +1,3 @@
+extends:
+  - modular/test
+  - modular/browser

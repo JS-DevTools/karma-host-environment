@@ -1,0 +1,5 @@
+--bail
+--require karma-host-environment
+--recursive
+test/fixtures
+test/specs

@@ -1,0 +1,72 @@
+{
+  "name": "karma-host-environment",
+  "version": "1.0.0",
+  "description": "Provides host environment info (user agent, Node.js version, environment variables, etc.)",
+  "keywords": [
+    "karma-plugin",
+    "karma-framework",
+    "mocha",
+    "test",
+    "host",
+    "environment",
+    "browser",
+    "user agent",
+    "environment variables"
+  ],
+  "author": {
+    "name": "James Messinger",
+    "url": "http://jamesmessinger.com"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/bigstickcarpet/karma-host-environment",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bigstickcarpet/karma-host-environment.git"
+  },
+  "main": "lib/index.js",
+  "browser": "dist/karma-host-environment.js",
+  "files": [
+    "dist/karma-host-environment.js",
+    "dist/karma-host-environment.js.map",
+    "dist/karma-host-environment.min.js",
+    "dist/karma-host-environment.min.js.map",
+    "lib"
+  ],
+  "scripts": {
+    "lint": "eslint lib test --fix",
+    "build": "simplifyify lib/browser.js --outfile dist/karma-host-environment.js --standalone host --bundle --debug --minify",
+    "test": "npm run mocha && npm run karma && npm run lint",
+    "cover": "istanbul cover _mocha --dir coverage/node && npm run build -- --test && istanbul cover karma -i lib/karma-plugin.js --dir coverage/karma -- start --single-run --cover",
+    "mocha": "mocha",
+    "karma": "karma start --single-run",
+    "upgrade": "npm-check -u",
+    "bump": "bump --prompt --grep dist/* --tag --push --all",
+    "release": "npm run upgrade && npm run build && npm test && npm run bump && npm publish"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "codacy-coverage": "^2.0.0",
+    "coveralls": "^2.11.9",
+    "eslint": "^3.13.1",
+    "eslint-config-modular": "^4.0.0",
+    "istanbul": "^0.4.5",
+    "karma": "^1.4.0",
+    "karma-chai": "^0.1.0",
+    "karma-chrome-launcher": "^2.0.0",
+    "karma-cli": "^1.0.1",
+    "karma-coverage": "^1.1.1",
+    "karma-firefox-launcher": "^1.0.0",
+    "karma-ie-launcher": "^1.0.0",
+    "karma-mocha": "^1.2.0",
+    "karma-safari-launcher": "^1.0.0",
+    "karma-sauce-launcher": "^1.1.0",
+    "karma-verbose-reporter": "0.0.6",
+    "mocha": "^3.2.0",
+    "npm-check": "^5.4.0",
+    "simplifyify": "^3.2.1",
+    "version-bump-prompt": "^3.0.1"
+  },
+  "dependencies": {
+    "temp": "^0.8.3"
+  }
+}
