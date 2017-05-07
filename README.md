@@ -16,92 +16,100 @@ Karma Host Environment
 [![Browser Compatibility](https://saucelabs.com/browser-matrix/karma-host.svg)](https://saucelabs.com/u/karma-host)
 
 
-The Problem:
+When writing [universal JavaScript](https://medium.com/@mjackson/universal-javascript-4761051b7ae9), it's desirable to also write universal tests, so you can easily test your code in all of the different environments that you support.  But inevitably, some functionality of your library will differ based on whether you're running in Node.js or a web browser, or based on which operating system or browser your code is running in.  So you need to write conditional code in your tests, based on the host environment.
+
+`karma-host-environment` makes it easy to write that conditional code.  And it's a universal JavaScript module, so you can use it with _any_ test framework or environment, including [Karma](https://karma-runner.github.io), [Mocha](https://mochajs.org/), [Tape](https://github.com/substack/tape), [QUnit](https://qunitjs.com/), etc.  The [Karma plug-in](https://karma-runner.github.io/1.0/config/plugins.html) even allows you to access **environment variables** in your browser tests!
+
+
+Usage
 --------------------------
-When writing [universal JavaScript](https://medium.com/@mjackson/universal-javascript-4761051b7ae9), it's desirable to also write universal tests, so you can easily test your code in all of the different environments that you support.  But inevitably, some functionality of your library will differ based on whether you're running in Node.js or a web browser, or based on which operating system or browser your code is running in.  So you need to write conditional code in your tests, based on the host environment.  But this code can get messy, since some global objects don't exist in all environments.
+When `karma-host-environment` loads, it defines a global object called `host` with properties that describe the host environment. Any properties that don't apply (such as the `host.browser` property when running in Node.js) are `false`.  Any properties that _do_ apply are an object with additional properties about that environment.  This allows you to write simple conditional checks that take advantage of the "truthy" and "falsy" behavior of JavaScript:
 
 ```javascript
-//
-// THE UGLY WAY TO DO IT 👎 😱
-//
-describe('my library', () => {
-  it('behaves differently in Internet Explorer', () => {
-    var isInternetExplorer = typeof navigator === 'object' &&
-      (navigator.userAgent.indexOf('MSIE') !== -1 ||
-       navigator.userAgent.indexOf('Edge') !== -1);
-
-    if (isInternetExplorer) {
-      // Test Internet Explorer behavior
-    }
-    else {
-      // Test behavior for other browsers
-    }
-  }
-
-  it('behaves differently on Linux', () => {
-    if (typeof process === 'object' && process.platform === 'linux') {
-      // Test Linux behavior
-    }
-    else {
-      // Test behavior for other operating systems
-    }
-  }
-
-  it('behaves differently based on an environment variable', () => {
-    if (typeof process === 'object' && process.env.SOME_VARIABLE === 'true') {
-      // Test conditional behavior
-    }
-    else if (typeof window === 'object') {
-      // We're running in a web browser, so we can't check environment variables :(
-    }
-    else {
-      // Test normabl behavior
-    }
-  }
-});
+if (host.browser && host.browser.IE && host.browser.IE.version >= 10.5) {
+  // Test specific behavior for Internet Explorer 10.5+
+}
+else if (host.browser) {
+  // Test default web browser behavior
+}
+else {
+  // Test Node.js behavior
+}
 ```
 
 
-The Solution:
+`host` Properties
 --------------------------
-`karma-host-environment` is a universal JavaScript module that works in Node.js, web browsers, mobile devices, Karma, Mocha, etc. and provides information about the host environment.  It even works as a [Karma plug-in](https://karma-runner.github.io/1.0/config/plugins.html) that allows you to access environment variables in your browser tests.
+To check the values of the `host` object for your current browser, **[click here](http://bigstickcarpet.com/karma-host-environment/test/index.html)**.
+
+### `host.node`
+This property is `false` when running in a web browser (including Karma).  When running in Node.js (e.g. Mocha, Tape, etc.) it is an object with the following structure:
 
 ```javascript
-//
-// THE NICE WAY TO DO IT 👍 😎
-//
-describe('my library', () => {
-  it('behaves differently in Internet Explorer', () => {
-    if (host.browser.IE) {
-      // Test Internet Explorer behavior
-    }
-    else {
-      // Test behavior for other browsers
-    }
-  }
+{
+  version: 7.3,         // The major.minor version, as a float
+  majorVersion: 7,      // The major version, as an integer
+  minorVersion: 3,      // The minor version, as an integer
+  patchVersion: 24      // The patch version, as an integer
+}
+```
 
-  it('behaves differently on Linux', () => {
-    if (host.os.linux) {
-      // Test Linux behavior
-    }
-    else {
-      // Test behavior for other operating systems
-    }
-  }
+### `host.karma`
+This property is `true` when running in Karma, or in a web page that is hosted by Karma. Otherwise, it's `false`.
 
-  it('behaves differently based on an environment variable', () => {
-    if (host.env.SOME_VARIABLE === 'true') {
-      // Test conditional behavior, even in web browsers !!!
-    }
-    else {
-      // Test normabl behavior
-    }
-  }
-});
+### `host.os`
+This property is always an object with the following structure:
+
+```javascript
+{
+  windows: false,       // Windows and Windows Phone
+  mac: true,            // Mac OS and iOS
+  linux: false          // Linux, Android, and other *nix platforms
+}
+```
+
+> **Note:** Only _one_ of the properties will be `true`. All others are `false`.
+
+### `host.browser`
+This property is `false` when running in Node.js (including Mocha, Tape, etc). When running in a browser (e.g. QUnit, Karma, Mocha for web, etc.) it is an object with the following structure:
+
+```javascript
+{
+  mobile: false,        // ANY BROWSER on iOS, Android, or Windows Phone
+  IE: false,            // Internet Explorer, Edge, XBox, and Windows Phone
+  safari: false,        // Safari and Safari Mobile
+  firefox: false,       // Firefox on desktop and Android
+  chrome: {             // Chrome on desktop and Android
+    version: 58.4,      // The major.minor version, as a float
+    majorVersion: 58,   // The major version, as an integer
+    minorVersion: 4,    // The minor version, as an integer
+    patchVersion: 3029  // The patch version, as an integer
+  },
+}
+```
+
+> **Note:** Only _one_ of the browser properties will be an object. All others are `false`.
+
+### `host.env`
+This property is always an object.  When running in Node.js, it is set to [`process.env`](https://nodejs.org/api/process.html#process_process_env).  When running in a web browser, it is usually empty, since web browsers don't have access to environment variables.  But when running in Karma, the [Karma plug-in](https://karma-runner.github.io/1.0/config/plugins.html) works-around this limitation and allows you to access your environment variables in the browser.
+
+```javascript
+{
+  TERM: 'xterm-256color',
+  SHELL: '/usr/local/bin/bash',
+  USER: 'maciej',
+  PATH: '~/.bin/:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin',
+  PWD: '/Users/maciej',
+  EDITOR: 'vim',
+  SHLVL: '1',
+  HOME: '/Users/maciej',
+  LOGNAME: 'maciej',
+  _: '/usr/local/bin/node'
+}
 ```
 
 
-Installation & Usage
+Installation
 --------------------------
 ### Node.js test frameworks (Karma, Mocha, Tape, etc.)
 Install using [npm](https://docs.npmjs.com/getting-started/what-is-npm):
