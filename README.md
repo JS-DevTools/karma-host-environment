@@ -26,8 +26,8 @@ Usage
 When `karma-host-environment` loads, it defines a global object called `host` with properties that describe the host environment. Any properties that don't apply (such as the `host.browser` property when running in Node.js) are `false`.  Any properties that _do_ apply are an object with additional properties about that environment.  This allows you to write simple conditional checks that take advantage of the "truthy" and "falsy" behavior of JavaScript:
 
 ```javascript
-if (host.browser && host.browser.IE && host.browser.IE.version >= 10.5) {
-  // Test specific behavior for Internet Explorer 10.5+
+if (host.browser && host.browser.IE && host.browser.IE.v8) {
+  // Test specific behavior for Internet Explorer 8
 }
 else if (host.browser) {
   // Test default web browser behavior
@@ -47,6 +47,7 @@ This property is `false` when running in a web browser (including Karma).  When 
 
 ```javascript
 {
+  v7: true,             // The major version, as a boolean
   version: 7.3,         // The major.minor version, as a float
   majorVersion: 7,      // The major version, as an integer
   minorVersion: 3,      // The minor version, as an integer
@@ -75,11 +76,12 @@ This property is `false` when running in Node.js (including Mocha, Tape, etc). W
 
 ```javascript
 {
-  mobile: false,        // ANY BROWSER on iOS, Android, or Windows Phone
+  mobile: false,        // Any mobile browser on iOS, Android, or Windows Phone
   IE: false,            // Internet Explorer, Edge, XBox, and Windows Phone
   safari: false,        // Safari and Safari Mobile
   firefox: false,       // Firefox on desktop and Android
   chrome: {             // Chrome on desktop and Android
+    v58: true,          // The major version, as a boolean
     version: 58.4,      // The major.minor version, as a float
     majorVersion: 58,   // The major version, as an integer
     minorVersion: 4,    // The minor version, as an integer

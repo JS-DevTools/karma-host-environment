@@ -67,7 +67,24 @@
       });
 
       it('host.browser should not have any other properties', function () {
-        expect(host.browser).to.have.all.keys(['IE', 'chrome', 'firefox', 'safari', 'mobile']);
+        expect(host.browser).to.have.all.keys([
+          'IE',
+          'chrome',
+          'firefox',
+          'safari',
+          'mobile'
+        ]);
+      });
+
+      it('host.browser.XXXXX should not have any other properties', function () {
+        var browser = getCurrentBrowser();
+        expect(browser).to.have.all.keys([
+          'version',
+          'majorVersion',
+          'minorVersion',
+          'patchVersion',
+          'v' + browser.majorVersion,
+        ]);
       });
 
     }

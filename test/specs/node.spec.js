@@ -43,8 +43,19 @@
         expect(host.node.patchVersion).to.equal(expected);
       });
 
+      it('host.node.vXX should be set', function () {
+        var vXX = /^(v\d+)\.\d+\.\d+/.exec(process.version)[1];
+        expect(host.node[vXX]).to.be.true;
+      });
+
       it('host.node should not have any other properties', function () {
-        expect(host.node).to.have.all.keys(['version', 'majorVersion', 'minorVersion', 'patchVersion']);
+        expect(host.node).to.have.all.keys([
+          'version',
+          'majorVersion',
+          'minorVersion',
+          'patchVersion',
+          'v' + host.node.majorVersion,
+        ]);
       });
 
     }

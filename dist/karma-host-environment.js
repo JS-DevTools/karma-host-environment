@@ -1,5 +1,5 @@
 /*!
- * Karma Host Environment v1.0.1 (May 7th 2017)
+ * Karma Host Environment v1.0.1 (May 29th 2017)
  * 
  * https://github.com/bigstickcarpet/karma-host-environment
  * 
@@ -56,12 +56,15 @@ module.exports = {
         var minor = parseInt(match[2]) || 0;
         var patch = parseInt(match[3]) || 0;
 
-        browser[userAgents[i].name] = {
+        var thisBrowser = browser[userAgents[i].name] = {
           version: parseFloat(major + '.' + minor),
           majorVersion: major,
           minorVersion: minor,
           patchVersion: patch,
         };
+
+        thisBrowser['v' + major] = true;
+
         break;
       }
     }
