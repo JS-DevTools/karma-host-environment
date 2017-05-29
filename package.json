@@ -46,7 +46,7 @@
     "release": "npm run upgrade && npm run build && npm test && npm run bump && npm publish"
   },
   "devDependencies": {
-    "chai": "^3.5.0",
+    "chai": "^4.0.0",
     "codacy-coverage": "^2.0.0",
     "coveralls": "^2.11.9",
     "eslint": "^3.13.1",
@@ -63,8 +63,8 @@
     "karma-safari-launcher": "^1.0.0",
     "karma-sauce-launcher": "^1.1.0",
     "karma-verbose-reporter": "0.0.6",
-    "mocha": "^3.2.0",
-    "npm-check": "^5.4.0",
+    "mocha": "^3.4.2",
+    "npm-check": "^5.4.4",
     "simplifyify": "^3.2.1",
     "version-bump-prompt": "^3.0.1"
   },
