@@ -68,6 +68,7 @@
 
     <!-- Test Specs -->
     <script src="specs/host.spec.js"></script>
+    <script src="specs/global.spec.js"></script>
     <script src="specs/node.spec.js"></script>
     <script src="specs/karma.spec.js"></script>
     <script src="specs/os.spec.js"></script>
@@ -76,9 +77,29 @@
 
     <script>
       document.getElementById('user-agent').innerText = navigator.userAgent;
-      document.getElementById('host').innerText = JSON.stringify(host, null, 2);
+      document.getElementById('host').innerText = JSON.stringify(safeClone(host), null, 2);
 
       mocha.run();
+
+      function safeClone (obj) {
+        var clone = {};
+        var keys = Object.keys(obj);
+
+        for (var i = 0; i < keys.length; i++) {
+          var key = keys[i];
+          var value = obj[key];
+
+          if (value === window) {
+            clone[key] = Object.prototype.toString.call(window);
+          }
+          else if (value && typeof value === 'object') {
+            clone[key] = safeClone(value);
+          }
+          else {
+            clone[key] = obj[key];
+          }
+        }
+      }
     </script>
   </body>
 </html>

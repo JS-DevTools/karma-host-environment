@@ -42,6 +42,9 @@ else {
 --------------------------
 To check the values of the `host` object for your current browser, **[click here](http://bigstickcarpet.com/karma-host-environment/test/index.html)**.
 
+### `host.global`
+When running in a web browser, `host.global` is a reference to the `window` object.  When running in Node.js, it's a reference to the `global` object.
+
 ### `host.node`
 This property is `false` when running in a web browser (including Karma).  When running in Node.js (e.g. Mocha, Tape, etc.) it is an object with the following structure:
 

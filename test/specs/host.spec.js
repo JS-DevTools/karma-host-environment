@@ -3,8 +3,12 @@
 
   describe('host object', function () {
 
-    it('host global should be defined', function () {
+    it('host should be defined', function () {
       expect(typeof host).to.equal('object');
+    });
+
+    it('host.global should be defined', function () {
+      expect(host).to.have.property('global');
     });
 
     it('host.node should be defined', function () {
@@ -31,7 +35,14 @@
     });
 
     it('host should not have any other properties', function () {
-      expect(host).to.have.all.keys(['node', 'karma', 'os', 'browser', 'env']);
+      expect(host).to.have.all.keys([
+        'global',
+        'node',
+        'karma',
+        'os',
+        'browser',
+        'env'
+      ]);
     });
 
   });
