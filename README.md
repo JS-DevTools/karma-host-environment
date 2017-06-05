@@ -1,8 +1,8 @@
 Karma Host Environment
 ------------------------------
 
-[![Build Status](https://api.travis-ci.org/BigstickCarpet/karma-host-environment.svg)](https://travis-ci.org/BigstickCarpet/karma-host-environment)
-[![Windows Build Status](https://ci.appveyor.com/api/projects/status/github/bigstickcarpet/karma-host-environment?svg=true&failingText=Windows%20build%20failing&passingText=Windows%20build%20passing)](https://ci.appveyor.com/project/BigstickCarpet/karma-host-environment/branch/master)
+[![Build Status](https://api.travis-ci.org/BigstickCarpet/karma-host-environment.svg?branch=master)](https://travis-ci.org/BigstickCarpet/karma-host-environment)
+[![Windows Build Status](https://ci.appveyor.com/api/projects/status/github/bigstickcarpet/karma-host-environment?svg=true&branch=master&failingText=Windows%20build%20failing&passingText=Windows%20build%20passing)](https://ci.appveyor.com/project/BigstickCarpet/karma-host-environment/branch/master)
 
 [![Coverage Status](https://coveralls.io/repos/BigstickCarpet/karma-host-environment/badge.svg?branch=master&service=github)](https://coveralls.io/r/BigstickCarpet/karma-host-environment)
 [![Codacy Score](https://api.codacy.com/project/badge/Grade/55226dbb01134c88b313182318147c66)](https://www.codacy.com/public/jamesmessinger/karma-host-environment)
