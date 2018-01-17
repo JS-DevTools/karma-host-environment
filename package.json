@@ -48,11 +48,11 @@
   "devDependencies": {
     "chai": "^4.0.2",
     "codacy-coverage": "^2.0.0",
-    "coveralls": "^2.11.9",
+    "coveralls": "^3.0.0",
     "eslint": "^4.0.0",
     "eslint-config-modular": "^4.1.0",
     "istanbul": "^0.4.5",
-    "karma": "^1.4.0",
+    "karma": "^2.0.0",
     "karma-chai": "^0.1.0",
     "karma-chrome-launcher": "^2.0.0",
     "karma-cli": "^1.0.1",
@@ -63,10 +63,10 @@
     "karma-safari-launcher": "^1.0.0",
     "karma-sauce-launcher": "^1.1.0",
     "karma-verbose-reporter": "0.0.6",
-    "mocha": "^3.4.2",
+    "mocha": "^4.1.0",
     "npm-check": "^5.4.4",
-    "simplifyify": "^3.2.1",
-    "version-bump-prompt": "^3.0.1"
+    "simplifyify": "^4.0.0",
+    "version-bump-prompt": "^4.0.0"
   },
   "dependencies": {
     "temp": "^0.8.3"
