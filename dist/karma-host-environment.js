@@ -1,8 +1,8 @@
 /*!
- * Karma Host Environment v1.1.1 (June 12th 2017)
- *
+ * Karma Host Environment v1.1.2 (January 17th 2018)
+ * 
  * https://github.com/bigstickcarpet/karma-host-environment
- *
+ * 
  * @author  James Messinger (http://bigstickcarpet.com)
  * @license MIT
  */
