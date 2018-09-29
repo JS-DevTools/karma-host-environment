@@ -161,7 +161,7 @@ console.log(host.node.version);
 Reference [`karma-host-environment.js`](dist/karma-host-environment.js) or [`karma-host-environment.min.js`](dist/karma-host-environment.min.js) in your HTML test page:
 
 ```html
-<script src="https://jamesmessinger.com/karma-host-environment/dist/karma-host-environment.js"></script>
+<script src="https://cdn.rawgit.com/James-Messinger/karma-host-environment/master/dist/karma-host-environment.js"></script>
 <script>
     console.log(host.browser);
 </script>
