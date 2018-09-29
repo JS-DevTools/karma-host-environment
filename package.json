@@ -38,7 +38,7 @@
     "test": "npm run test:node && npm run test:browser && npm run lint",
     "test:node": "mocha",
     "test:browser": "karma start --single-run",
-    "coverage": "npm run coverage:mocha && npm run coverage:karma",
+    "coverage": "npm run coverage:node && npm run coverage:browser",
     "coverage:node": "istanbul cover _mocha -x lib/browser.js -x lib/user-agent.js --dir coverage/node",
     "coverage:browser": "npm run build -- --coverage && istanbul cover karma -i lib/karma-plugin.js --dir coverage/karma -- start --single-run --coverage",
     "upgrade": "npm-check -u",
