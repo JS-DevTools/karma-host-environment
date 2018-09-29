@@ -9,18 +9,17 @@
 
     it('all keys should be valid environment variable names', function () {
       var keys = Object.keys(host.env);
+      var allowedCharacters;
+
+      if (host.os.windows) {
+        allowedCharacters = /^[a-zA-Z0-9_()-]+$/;
+      }
+      else {
+        allowedCharacters = /^[a-zA-Z0-9_]+$/;
+      }
 
       for (var i = 0; i < keys.length; i++) {
         var key = keys[i];
-        var allowedCharacters;
-
-        if (host.os.windows) {
-          allowedCharacters = /^[a-zA-Z0-9_()]+$/;
-        }
-        else {
-          allowedCharacters = /^[a-zA-Z0-9_]+$/;
-        }
-
         expect(key).to.match(allowedCharacters);
       }
     });
