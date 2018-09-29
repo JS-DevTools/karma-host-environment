@@ -10,7 +10,6 @@ Karma Host Environment
 [![Dependencies](https://david-dm.org/James-Messinger/karma-host-environment.svg)](https://david-dm.org/James-Messinger/karma-host-environment)
 
 [![npm](http://img.shields.io/npm/v/karma-host-environment.svg)](https://www.npmjs.com/package/karma-host-environment)
-[![Bower](http://img.shields.io/bower/v/karma-host-environment.svg)](#bower)
 [![License](https://img.shields.io/npm/l/karma-host-environment.svg)](LICENSE)
 
 [![Browser Compatibility](https://saucelabs.com/browser-matrix/karma-host.svg)](https://saucelabs.com/u/karma-host)
@@ -159,16 +158,10 @@ console.log(host.node.version);
 
 
 ### Browser test frameworks (QUnit, Mocha, etc.)
-Install using [bower](http://bower.io/):
-
-```bash
-bower install karma-host-environment
-```
-
-Then reference [`karma-host-environment.js`](dist/karma-host-environment.js) or [`karma-host-environment.min.js`](dist/karma-host-environment.min.js) in your HTML test page:
+Reference [`karma-host-environment.js`](dist/karma-host-environment.js) or [`karma-host-environment.min.js`](dist/karma-host-environment.min.js) in your HTML test page:
 
 ```html
-<script src="bower_components/karma-host-environment/dist/karma-host-environment.js"></script>
+<script src="https://jamesmessinger.com/karma-host-environment/dist/karma-host-environment.js"></script>
 <script>
     console.log(host.browser);
 </script>
@@ -200,4 +193,3 @@ To build the project locally on your computer:
 License
 --------------------------
 karma-host-environment is 100% free and open-source, under the [MIT license](LICENSE). Use it however you want.
-
