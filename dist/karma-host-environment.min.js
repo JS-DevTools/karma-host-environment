@@ -1,5 +1,5 @@
 /*!
- * Karma Host Environment v1.1.4 (September 29th 2018)
+ * Karma Host Environment v1.1.5 (September 29th 2018)
  * 
  * https://github.com/James-Messinger/karma-host-environment
  * 
