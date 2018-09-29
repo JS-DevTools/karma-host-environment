@@ -35,12 +35,12 @@
   "scripts": {
     "lint": "eslint lib test --fix",
     "build": "simplifyify lib/browser.js --outfile dist/karma-host-environment.js --standalone host --bundle --debug --minify",
-    "test": "npm run mocha && npm run karma && npm run lint",
+    "test": "npm run test:node && npm run test:browser && npm run lint",
+    "test:node": "mocha",
+    "test:browser": "karma start --single-run",
     "coverage": "npm run coverage:mocha && npm run coverage:karma",
-    "coverage:mocha": "istanbul cover _mocha -x lib/browser.js -x lib/user-agent.js --dir coverage/node",
-    "coverage:karma": "npm run build -- --coverage && istanbul cover karma -i lib/karma-plugin.js --dir coverage/karma -- start --single-run --coverage",
-    "mocha": "mocha",
-    "karma": "karma start --single-run",
+    "coverage:node": "istanbul cover _mocha -x lib/browser.js -x lib/user-agent.js --dir coverage/node",
+    "coverage:browser": "npm run build -- --coverage && istanbul cover karma -i lib/karma-plugin.js --dir coverage/karma -- start --single-run --coverage",
     "upgrade": "npm-check -u",
     "bump": "bump --prompt --grep dist/* --tag --push --all",
     "release": "npm run upgrade && npm run build && npm test && npm run bump && npm publish"
