@@ -1,13 +1,13 @@
 Karma Host Environment
 ------------------------------
 
-[![Build Status](https://api.travis-ci.org/BigstickCarpet/karma-host-environment.svg?branch=master)](https://travis-ci.org/BigstickCarpet/karma-host-environment)
-[![Windows Build Status](https://ci.appveyor.com/api/projects/status/github/bigstickcarpet/karma-host-environment?svg=true&branch=master&failingText=Windows%20build%20failing&passingText=Windows%20build%20passing)](https://ci.appveyor.com/project/BigstickCarpet/karma-host-environment/branch/master)
+[![Build Status](https://api.travis-ci.org/James-Messinger/karma-host-environment.svg?branch=master)](https://travis-ci.org/James-Messinger/karma-host-environment)
+[![Windows Build Status](https://ci.appveyor.com/api/projects/status/github/james-messinger/karma-host-environment?svg=true&branch=master&failingText=Windows%20build%20failing&passingText=Windows%20build%20passing)](https://ci.appveyor.com/project/BigstickCarpet/karma-host-environment/branch/master)
 
-[![Coverage Status](https://coveralls.io/repos/BigstickCarpet/karma-host-environment/badge.svg?branch=master&service=github)](https://coveralls.io/r/BigstickCarpet/karma-host-environment)
+[![Coverage Status](https://coveralls.io/repos/github/James-Messinger/karma-host-environment/badge.svg?branch=master)](https://coveralls.io/github/James-Messinger/karma-host-environment)
 [![Codacy Score](https://api.codacy.com/project/badge/Grade/55226dbb01134c88b313182318147c66)](https://www.codacy.com/public/jamesmessinger/karma-host-environment)
-[![Inline docs](http://inch-ci.org/github/bigstickcarpet/karma-host-environment.svg?branch=master&style=shields)](http://inch-ci.org/github/bigstickcarpet/karma-host-environment)
-[![Dependencies](https://david-dm.org/BigstickCarpet/karma-host-environment.svg)](https://david-dm.org/BigstickCarpet/karma-host-environment)
+[![Inline docs](http://inch-ci.org/github/James-Messinger/karma-host-environment.svg?branch=master&style=shields)](http://inch-ci.org/github/James-Messinger/karma-host-environment)
+[![Dependencies](https://david-dm.org/James-Messinger/karma-host-environment.svg)](https://david-dm.org/James-Messinger/karma-host-environment)
 
 [![npm](http://img.shields.io/npm/v/karma-host-environment.svg)](https://www.npmjs.com/package/karma-host-environment)
 [![Bower](http://img.shields.io/bower/v/karma-host-environment.svg)](#bower)
@@ -40,7 +40,7 @@ else {
 
 `host` Properties
 --------------------------
-To check the values of the `host` object for your current browser, **[click here](http://bigstickcarpet.com/karma-host-environment/test/index.html)**.
+To check the values of the `host` object for your current browser, **[click here](https://jamesmessinger.com/karma-host-environment/test/index.html)**.
 
 ### `host.global`
 When running in a web browser, `host.global` is a reference to the `window` object.  When running in Node.js, it's a reference to the `global` object.
@@ -177,13 +177,13 @@ Then reference [`karma-host-environment.js`](dist/karma-host-environment.js) or 
 
 Contributing
 --------------------------
-I welcome any contributions, enhancements, and bug-fixes.  [File an issue](https://github.com/BigstickCarpet/karma-host-environment/issues) on GitHub and [submit a pull request](https://github.com/BigstickCarpet/karma-host-environment/pulls).
+I welcome any contributions, enhancements, and bug-fixes.  [File an issue](https://github.com/James-Messinger/karma-host-environment/issues) on GitHub and [submit a pull request](https://github.com/James-Messinger/karma-host-environment/pulls).
 
 #### Building
 To build the project locally on your computer:
 
 1. __Clone this repo__<br>
-`git clone https://github.com/bigstickcarpet/karma-host-environment.git`
+`git clone https://github.com/James-Messinger/karma-host-environment.git`
 
 2. __Install dependencies__<br>
 `npm install`
