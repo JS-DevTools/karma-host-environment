@@ -6,10 +6,10 @@ Karma Host Environment
 
 [![Coverage Status](https://coveralls.io/repos/github/James-Messinger/karma-host-environment/badge.svg?branch=master)](https://coveralls.io/github/James-Messinger/karma-host-environment)
 [![Codacy Score](https://api.codacy.com/project/badge/Grade/55226dbb01134c88b313182318147c66)](https://www.codacy.com/public/jamesmessinger/karma-host-environment)
-[![Inline docs](http://inch-ci.org/github/James-Messinger/karma-host-environment.svg?branch=master&style=shields)](http://inch-ci.org/github/James-Messinger/karma-host-environment)
+[![Inline docs](https://inch-ci.org/github/James-Messinger/karma-host-environment.svg?branch=master&style=shields)](https://inch-ci.org/github/James-Messinger/karma-host-environment)
 [![Dependencies](https://david-dm.org/James-Messinger/karma-host-environment.svg)](https://david-dm.org/James-Messinger/karma-host-environment)
 
-[![npm](http://img.shields.io/npm/v/karma-host-environment.svg)](https://www.npmjs.com/package/karma-host-environment)
+[![npm](https://img.shields.io/npm/v/karma-host-environment.svg)](https://www.npmjs.com/package/karma-host-environment)
 [![License](https://img.shields.io/npm/l/karma-host-environment.svg)](LICENSE)
 
 [![Browser Compatibility](https://saucelabs.com/browser-matrix/karma-host.svg)](https://saucelabs.com/u/karma-host)
