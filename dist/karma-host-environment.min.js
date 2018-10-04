@@ -1,8 +1,8 @@
 /*!
- * Karma Host Environment v1.1.5 (September 29th 2018)
- *
+ * Karma Host Environment v1.1.6 (October 4th 2018)
+ * 
  * https://github.com/JS-DevTools/karma-host-environment
- *
+ * 
  * @author  James Messinger (https://jamesmessinger.com)
  * @license MIT
  */
