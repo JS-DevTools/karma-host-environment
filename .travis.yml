@@ -4,7 +4,7 @@
 # https://docs.travis-ci.com/user/migrating-from-legacy/
 
 dist: trusty
-sudo: false
+sudo: required  # Required for headless Chrome
 language: node_js
 
 addons:
@@ -17,8 +17,11 @@ matrix:
     - node_js: 10
       env: KARMA=true
 
-    # Node tests
+    # Node 8 + SauceLabs tests
     - node_js: 8
+      env: KARMA=true SAUCE=true
+
+    # Node 6 tests
     - node_js: 6
 
 before_script:
