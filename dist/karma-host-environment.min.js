@@ -1,5 +1,5 @@
 /*!
- * Karma Host Environment v1.1.6 (October 4th 2018)
+ * Karma Host Environment v1.1.6 (October 6th 2018)
  * 
  * https://github.com/JS-DevTools/karma-host-environment
  * 

@@ -39,8 +39,8 @@
     "test:node": "mocha",
     "test:browser": "karma start --single-run",
     "coverage": "npm run coverage:node && npm run coverage:browser",
-    "coverage:node": "istanbul cover _mocha -x lib/browser.js -x lib/user-agent.js --dir coverage/node",
-    "coverage:browser": "npm run build -- --coverage && istanbul cover karma -i lib/karma-plugin.js --dir coverage/karma -- start --single-run --coverage",
+    "coverage:node": "nyc --reporter=text --reporter=lcov --report-dir coverage/node mocha",
+    "coverage:browser": "npm run build -- --coverage && npm run test:browser -- --coverage",
     "upgrade": "npm-check -u",
     "bump": "bump --prompt --grep dist/* --tag --push --all",
     "release": "npm run upgrade && npm run build && npm test && npm run bump && npm publish"
@@ -51,7 +51,6 @@
     "coveralls": "^3.0.2",
     "eslint": "^5.6.1",
     "eslint-config-modular": "^4.2.2",
-    "istanbul": "^0.4.5",
     "karma": "^3.0.0",
     "karma-chai": "^0.1.0",
     "karma-chrome-launcher": "^2.0.0",
@@ -66,6 +65,7 @@
     "karma-verbose-reporter": "0.0.6",
     "mocha": "^5.2.0",
     "npm-check": "^5.9.0",
+    "nyc": "^13.0.1",
     "simplifyify": "^6.0.0",
     "version-bump-prompt": "^4.2.1"
   },
