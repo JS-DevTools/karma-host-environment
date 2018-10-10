@@ -39,7 +39,7 @@ else {
 
 `host` Properties
 --------------------------
-To check the values of the `host` object for your current browser, **[click here](https://jsdevtools.org/karma-host-environment/test/index.html)**.
+To check the values of the `host` object for your current browser, **[click here](https://jsdevtools.org/karma-host-environment/test/)**.
 
 ### `host.global`
 When running in a web browser, `host.global` is a reference to the `window` object.  When running in Node.js, it's a reference to the `global` object.
