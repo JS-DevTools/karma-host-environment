@@ -33,7 +33,7 @@
     "lib"
   ],
   "scripts": {
-    "lint": "eslint lib test --fix",
+    "lint": "eslint lib test",
     "build": "simplifyify lib/browser.js --outfile dist/karma-host-environment.js --standalone host --bundle --debug --minify",
     "test": "npm run test:node && npm run test:browser && npm run lint",
     "test:node": "mocha",
