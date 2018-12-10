@@ -1,16 +1,14 @@
 Karma Host Environment
 ------------------------------
 
-[![Build Status](https://api.travis-ci.org/JS-DevTools/karma-host-environment.svg?branch=master)](https://travis-ci.org/JS-DevTools/karma-host-environment)
-[![Windows Build Status](https://ci.appveyor.com/api/projects/status/github/JS-DevTools/karma-host-environment?svg=true&branch=master&failingText=Windows%20build%20failing&passingText=Windows%20build%20passing)](https://ci.appveyor.com/project/JamesMessinger/karma-host-environment/branch/master)
-
+[![Build Status](https://api.travis-ci.com/JS-DevTools/karma-host-environment.svg?branch=master)](https://travis-ci.com/JS-DevTools/karma-host-environment)
 [![Coverage Status](https://coveralls.io/repos/github/JS-DevTools/karma-host-environment/badge.svg?branch=master)](https://coveralls.io/github/JS-DevTools/karma-host-environment)
-[![Dependencies](https://david-dm.org/JS-DevTools/karma-host-environment.svg)](https://david-dm.org/JS-DevTools/karma-host-environment)
 
 [![npm](https://img.shields.io/npm/v/karma-host-environment.svg)](https://www.npmjs.com/package/karma-host-environment)
+[![Dependencies](https://david-dm.org/JS-DevTools/karma-host-environment.svg)](https://david-dm.org/JS-DevTools/karma-host-environment)
 [![License](https://img.shields.io/npm/l/karma-host-environment.svg)](LICENSE)
 
-[![Browser Compatibility](https://saucelabs.com/browser-matrix/karma-host.svg)](https://saucelabs.com/u/karma-host)
+[![OS and Browser Compatibility](https://jsdevtools.org/img/ci-badges-with-ie.svg)](https://travis-ci.com/JS-DevTools/karma-host-environment)
 
 
 When writing [universal JavaScript](https://medium.com/@mjackson/universal-javascript-4761051b7ae9), it's desirable to also write universal tests, so you can easily test your code in all of the different environments that you support.  But inevitably, some functionality of your library will differ based on whether you're running in Node.js or a web browser, or based on which operating system or browser your code is running in.  So you need to write conditional code in your tests, based on the host environment.

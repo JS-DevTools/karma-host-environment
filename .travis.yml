@@ -3,39 +3,60 @@
 # https://docs.travis-ci.com/user/customizing-the-build/
 # https://docs.travis-ci.com/user/migrating-from-legacy/
 
-dist: trusty
-sudo: required  # Required for headless Chrome
 language: node_js
 
-addons:
-  firefox: latest
-  chrome: stable
+node_js:
+  - 10
+  - 8
+  - 6
+
+os:
+  - linux
+  - osx
+  - windows
 
 matrix:
   include:
-    # Node 10 + Browser tests
-    - node_js: 10
-      env: KARMA=true
+    - name: Browser tests (Linux)
+      os: linux
+      node_js: 10
+      env: BROWSER_TESTS=true
+      addons:
+        firefox: latest
+        chrome: stable
 
-    # Node 8 + SauceLabs tests
-    - node_js: 8
-      env: KARMA=true SAUCE=true
+    - name: Browser tests (Mac)
+      os: osx
+      node_js: 10
+      env: BROWSER_TESTS=true
+      addons:
+        firefox: latest
+        chrome: stable
 
-    # Node 6 tests
-    - node_js: 6
+    - name: Browser tests (Windows via SauceLabs)
+      os: linux
+      node_js: 10
+      env:
+        - BROWSER_TESTS=true
+        - WINDOWS=true
 
 before_script:
   # Link the package to itself (so Karma and Mocha can find it)
   - npm link
   - npm link karma-host-environment
 
-  # Setup a virtual display for browser testing
-  - export DISPLAY=:99.0
-  - sh -e /etc/init.d/xvfb start
-
 script:
   - npm run lint
   - npm run coverage
+
+script:
+  if [ ${BROWSER_TESTS} = "true" ]; then
+    npm run coverage:browser;
+  else
+    npm run lint;
+    npm run coverage:node;
+    npm run test:typescript;
+  fi
 
 after_success:
   # concatenate all code-coverage data into a single file
@@ -43,4 +64,4 @@ after_success:
   - cat coverage/*/lcov.info > ./coverage/lcov.info
 
   # send code-coverage data to Coveralls
-  - cat ./coverage/lcov.info | node_modules/coveralls/bin/coveralls.js
+  - cat ./coverage/lcov.info | coveralls
