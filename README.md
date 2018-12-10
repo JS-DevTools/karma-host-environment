@@ -5,8 +5,6 @@ Karma Host Environment
 [![Windows Build Status](https://ci.appveyor.com/api/projects/status/github/JS-DevTools/karma-host-environment?svg=true&branch=master&failingText=Windows%20build%20failing&passingText=Windows%20build%20passing)](https://ci.appveyor.com/project/JamesMessinger/karma-host-environment/branch/master)
 
 [![Coverage Status](https://coveralls.io/repos/github/JS-DevTools/karma-host-environment/badge.svg?branch=master)](https://coveralls.io/github/JS-DevTools/karma-host-environment)
-[![Codacy Score](https://api.codacy.com/project/badge/Grade/55226dbb01134c88b313182318147c66)](https://www.codacy.com/public/JamesMessinger/karma-host-environment)
-[![Inline docs](https://inch-ci.org/github/JS-DevTools/karma-host-environment.svg?branch=master&style=shields)](https://inch-ci.org/github/JS-DevTools/karma-host-environment)
 [![Dependencies](https://david-dm.org/JS-DevTools/karma-host-environment.svg)](https://david-dm.org/JS-DevTools/karma-host-environment)
 
 [![npm](https://img.shields.io/npm/v/karma-host-environment.svg)](https://www.npmjs.com/package/karma-host-environment)
