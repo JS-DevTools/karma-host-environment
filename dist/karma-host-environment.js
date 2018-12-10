@@ -1,16 +1,16 @@
 /*!
- * Karma Host Environment v1.1.6 (October 6th 2018)
+ * Karma Host Environment v1.1.7 (December 10th 2018)
  * 
- * https://github.com/JS-DevTools/karma-host-environment
+ * https://jsdevtools.org/karma-host-environment
  * 
  * @author  James Messinger (https://jamesmessinger.com)
  * @license MIT
  */
 (function(f){if(typeof exports==="object"&&typeof module!=="undefined"){module.exports=f()}else if(typeof define==="function"&&define.amd){define([],f)}else{var g;if(typeof window!=="undefined"){g=window}else if(typeof global!=="undefined"){g=global}else if(typeof self!=="undefined"){g=self}else{g=this}g.host = f()}})(function(){var define,module,exports;return (function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
-'use strict';
+"use strict";
 
-var Host = require('./host');
-var userAgent = require('./user-agent');
+var Host = require("./host");
+var userAgent = require("./user-agent");
 
 module.exports = window.host = new Host({
   global: window,
@@ -22,7 +22,7 @@ module.exports = window.host = new Host({
 });
 
 },{"./host":2,"./user-agent":3}],2:[function(require,module,exports){
-'use strict';
+"use strict";
 
 module.exports = Host;
 
@@ -70,7 +70,7 @@ function clone (target, source) {
 }
 
 },{}],3:[function(require,module,exports){
-'use strict';
+"use strict";
 
 module.exports = {
   /**
@@ -92,11 +92,11 @@ module.exports = {
 
     // NOTE: The order matters here!
     var userAgents = [
-      { name: 'IE', pattern: /(?:MSIE|Edge)(?:\W+(\d+)\.(\d+)(?:\.(\d+))?)?/ },
-      { name: 'IE', pattern: /Trident(?:.*rv\:(\d+)\.(\d+)(?:\.(\d+))?)?/ },
-      { name: 'chrome', pattern: /Chrome(?:\W+(\d+)\.(\d+)(?:\.(\d+))?)?/ },
-      { name: 'firefox', pattern: /Firefox(?:\W+(\d+)\.(\d+)(?:\.(\d+))?)?/ },
-      { name: 'safari', pattern: /(?:Version\W+(\d+)\.(\d+)(?:\.(\d+))?)?(?:\W+Mobile\S*)?\W+Safari/ },
+      { name: "IE", pattern: /(?:MSIE|Edge)(?:\W+(\d+)\.(\d+)(?:\.(\d+))?)?/ },
+      { name: "IE", pattern: /Trident(?:.*rv\:(\d+)\.(\d+)(?:\.(\d+))?)?/ },
+      { name: "chrome", pattern: /Chrome(?:\W+(\d+)\.(\d+)(?:\.(\d+))?)?/ },
+      { name: "firefox", pattern: /Firefox(?:\W+(\d+)\.(\d+)(?:\.(\d+))?)?/ },
+      { name: "safari", pattern: /(?:Version\W+(\d+)\.(\d+)(?:\.(\d+))?)?(?:\W+Mobile\S*)?\W+Safari/ },
     ];
 
     for (var i = 0; i < userAgents.length; i++) {
@@ -107,13 +107,13 @@ module.exports = {
         var patch = parseInt(match[3]) || 0;
 
         var thisBrowser = browser[userAgents[i].name] = {
-          version: parseFloat(major + '.' + minor),
+          version: parseFloat(major + "." + minor),
           majorVersion: major,
           minorVersion: minor,
           patchVersion: patch,
         };
 
-        thisBrowser['v' + major] = true;
+        thisBrowser["v" + major] = true;
 
         break;
       }
@@ -138,9 +138,9 @@ module.exports = {
 
     // NOTE: The order matters here!
     var userAgents = [
-      { name: 'mac', pattern: /(Mac OS|Macintosh|iPhone|iPad)/ },
-      { name: 'windows', pattern: /(Windows NT|Windows Phone)/ },
-      { name: 'linux', pattern: /(Linux|Android)/ },
+      { name: "mac", pattern: /(Mac OS|Macintosh|iPhone|iPad)/ },
+      { name: "windows", pattern: /(Windows NT|Windows Phone)/ },
+      { name: "linux", pattern: /(Linux|Android)/ },
     ];
 
     for (var i = 0; i < userAgents.length; i++) {
