@@ -55,7 +55,6 @@ script:
   else
     npm run lint;
     npm run coverage:node;
-    npm run test:typescript;
   fi
 
 after_success:
