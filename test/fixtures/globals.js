@@ -1,5 +1,5 @@
 (function () {
-  'use strict';
+  "use strict";
 
   if (host.browser) {
     // Expose Chai.expect as a global function
@@ -7,7 +7,7 @@
   }
   else {
     // Expose Chai.expect as a global function
-    global.expect = require('chai').expect;
+    global.expect = require("chai").expect;
   }
 
 }());

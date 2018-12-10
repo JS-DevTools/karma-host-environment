@@ -1,13 +1,13 @@
 (function () {
-  'use strict';
+  "use strict";
 
-  describe('Environment variables', function () {
+  describe("Environment variables", function () {
 
-    it('host.env should be an object', function () {
-      expect(host.env).to.be.an('object');
+    it("host.env should be an object", function () {
+      expect(host.env).to.be.an("object");
     });
 
-    it('all keys should be valid environment variable names', function () {
+    it("all keys should be valid environment variable names", function () {
       var keys = Object.keys(host.env);
       var allowedCharacters;
 
@@ -24,13 +24,13 @@
       }
     });
 
-    it('all values should be strings', function () {
+    it("all values should be strings", function () {
       var keys = Object.keys(host.env);
 
       for (var i = 0; i < keys.length; i++) {
         var key = keys[i];
         var value = host.env[key];
-        expect(value).to.be.a('string');
+        expect(value).to.be.a("string");
       }
     });
 
