@@ -8,7 +8,7 @@ Karma Host Environment
 [![Dependencies](https://david-dm.org/JS-DevTools/karma-host-environment.svg)](https://david-dm.org/JS-DevTools/karma-host-environment)
 [![License](https://img.shields.io/npm/l/karma-host-environment.svg)](LICENSE)
 
-[![OS and Browser Compatibility](https://jsdevtools.org/img/ci-badges-with-ie.svg)](https://travis-ci.com/JS-DevTools/karma-host-environment)
+[![OS and Browser Compatibility](https://jsdevtools.org/img/badges/ci-badges-with-ie.svg)](https://travis-ci.com/JS-DevTools/karma-host-environment)
 
 
 When writing [universal JavaScript](https://medium.com/@mjackson/universal-javascript-4761051b7ae9), it's desirable to also write universal tests, so you can easily test your code in all of the different environments that you support.  But inevitably, some functionality of your library will differ based on whether you're running in Node.js or a web browser, or based on which operating system or browser your code is running in.  So you need to write conditional code in your tests, based on the host environment.
@@ -166,7 +166,7 @@ Reference [`karma-host-environment.js`](dist/karma-host-environment.js) or [`kar
 
 Contributing
 --------------------------
-I welcome any contributions, enhancements, and bug-fixes.  [File an issue](https://github.com/JS-DevTools/karma-host-environment/issues) on GitHub and [submit a pull request](https://github.com/JS-DevTools/karma-host-environment/pulls).
+Contributions, enhancements, and bug-fixes are welcome!  [File an issue](https://github.com/JS-DevTools/karma-host-environment/issues) on GitHub and [submit a pull request](https://github.com/JS-DevTools/karma-host-environment/pulls).
 
 #### Building
 To build the project locally on your computer:
@@ -189,3 +189,12 @@ To build the project locally on your computer:
 License
 --------------------------
 karma-host-environment is 100% free and open-source, under the [MIT license](LICENSE). Use it however you want.
+
+
+Big Thanks To
+--------------------------
+Thanks to these awesome companies for their support of Open Source developers ❤
+
+[![Travis CI](https://jsdevtools.org/img/badges/travis-ci.svg)](https://travis-ci.com)
+[![SauceLabs](https://jsdevtools.org/img/badges/sauce-labs.svg)](https://saucelabs.com)
+[![Coveralls](https://jsdevtools.org/img/badges/coveralls.svg)](https://coveralls.io)
