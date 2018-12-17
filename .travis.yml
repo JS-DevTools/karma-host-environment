@@ -16,47 +16,12 @@ os:
   - osx
   - windows
 
-matrix:
-  include:
-    - name: Browser tests (Linux)
-      os: linux
-      node_js: 10
-      env: BROWSER_TESTS=true
-      addons:
-        firefox: latest
-        chrome: stable
-
-    - name: Browser tests (Mac)
-      os: osx
-      node_js: 10
-      env: BROWSER_TESTS=true
-      addons:
-        firefox: latest
-        chrome: stable
-
-    - name: Browser tests (Windows via SauceLabs)
-      os: linux
-      node_js: 10
-      env:
-        - BROWSER_TESTS=true
-        - WINDOWS=true
-
 before_script:
   # Link the package to itself (so Karma and Mocha can find it)
   - npm link
   - npm link karma-host-environment
 
-script:
-  - npm run lint
-  - npm run coverage
-
-script:
-  if [ ${BROWSER_TESTS} = "true" ]; then
-    npm run coverage:browser;
-  else
-    npm run lint;
-    npm run coverage:node;
-  fi
+script: npm run lint && npm run coverage:node
 
 after_success:
   # concatenate all code-coverage data into a single file
@@ -65,3 +30,37 @@ after_success:
 
   # send code-coverage data to Coveralls
   - cat ./coverage/lcov.info | coveralls
+
+jobs:
+  include:
+    - name: Browser tests (Linux)
+      os: linux
+      script: npm run coverage:browser
+      addons:
+        firefox: latest
+        chrome: stable
+
+    - name: Browser tests (Mac)
+      os: osx
+      script: npm run coverage:browser
+      addons:
+        firefox: latest
+        chrome: stable
+
+    - name: Browser tests (Windows via SauceLabs)
+      os: linux
+      script: npm run coverage:browser
+      env: WINDOWS=true
+
+    - stage: Deploy
+      name: Publish to npm
+      script: npm run build
+      after_success: true
+      deploy:
+        provider: npm
+        email: $NPM_EMAIL
+        api_key: $NPM_API_KEY
+        skip_cleanup: true
+        on:
+          tags: true
+          branch: master
