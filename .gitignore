@@ -38,4 +38,6 @@ node_modules
 # Test output
 /.nyc_output
 /coverage
-/dist/*.coverage.js
+
+# Build output
+/lib
