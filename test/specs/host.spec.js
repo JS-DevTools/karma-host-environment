@@ -1,50 +1,35 @@
-(function () {
-  "use strict";
+"use strict";
 
-  describe("host object", function () {
+const { host } = require("host-environment");
+const { expect } = require("chai");
 
-    it("host should be defined", function () {
-      expect(typeof host).to.equal("object");
-    });
+describe("host", function () {
 
-    it("host.global should be defined", function () {
-      expect(host).to.have.property("global");
-    });
-
-    it("host.node should be defined", function () {
-      expect(host).to.have.property("node");
-    });
-
-    it("host.karma should be defined", function () {
-      expect(host).to.have.property("karma");
-    });
-
-    it("host.os should be defined", function () {
-      expect(host).to.have.property("os");
-      expect(host.os).to.be.an("object");
-      expect(host.os).to.have.all.keys(["windows", "mac", "linux"]);
-    });
-
-    it("host.browser should be defined", function () {
-      expect(host).to.have.property("browser");
-    });
-
-    it("host.env should be defined", function () {
-      expect(host).to.have.property("env");
-      expect(host.env).to.be.an("object");
-    });
-
-    it("host should not have any other properties", function () {
-      expect(host).to.have.all.keys([
-        "global",
-        "node",
-        "karma",
-        "os",
-        "browser",
-        "env"
-      ]);
-    });
-
+  it("should have all of the host-environment fields", function () {
+    expect(host).to.have.keys("global", "os", "env", "node", "browser", "karma", "merge", "toJSON");
+    expect(host.global).to.equal(window);
+    expect(host.os).to.be.an("object").with.keys("windows", "mac", "linux");
+    expect(host.env).to.be.an("object").and.not.empty;
+    expect(host.node).to.equal(false);
+    expect(host.browser).to.be.an("object").with.keys("IE", "edge", "chrome", "firefox", "safari", "mobile");
+    expect(host.merge).to.be.a("function");
+    expect(host.toJSON).to.be.a("function");
   });
 
-}());
+  it("should have the karma-host-environment fields too", function () {
+    expect(host.karma).to.be.an("object").with.keys("global", "os", "env", "node", "browser");
+    expect(host.karma).to.deep.equal(window.host.karma);
+  });
+
+  it("should have environment variables", function () {
+    expect(host.env).not.to.be.empty;
+    expect(host.env).to.deep.equal(host.karma.env);
+
+    for (let key of Object.keys(host.env)) {
+      let value = host.env[key];
+      expect(key).to.be.a("string").with.length.above(0);
+      expect(value).to.be.a("string");
+    }
+  });
+
+});
