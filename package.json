@@ -1,12 +1,13 @@
 {
   "name": "karma-host-environment",
   "version": "1.1.7",
-  "description": "Provides host environment info (user agent, Node.js version, environment variables, etc.)",
+  "description": "Access host info (OS, browser version, environment variables) in browser tests",
   "keywords": [
+    "karma",
     "karma-plugin",
     "karma-framework",
-    "mocha",
     "test",
+    "testing",
     "host",
     "environment",
     "browser",
@@ -24,51 +25,45 @@
     "url": "https://github.com/JS-DevTools/karma-host-environment.git"
   },
   "main": "lib/index.js",
-  "browser": "dist/karma-host-environment.js",
+  "types": "lib/index.d.js",
   "files": [
-    "dist/karma-host-environment.js",
-    "dist/karma-host-environment.js.map",
-    "dist/karma-host-environment.min.js",
-    "dist/karma-host-environment.min.js.map",
     "lib"
   ],
   "scripts": {
-    "lint": "eslint lib test",
-    "build": "simplifyify lib/browser.js --outfile dist/karma-host-environment.js --standalone host --bundle --debug --minify",
-    "test": "npm run test:node && npm run test:browser && npm run lint",
-    "test:node": "mocha",
-    "test:browser": "karma start --single-run",
-    "coverage": "npm run coverage:node && npm run coverage:browser",
-    "coverage:node": "nyc --reporter=text --reporter=lcov --report-dir coverage/node -x test -x lib/browser.js -x lib/user-agent.js mocha",
-    "coverage:browser": "npm run build -- --coverage && npm run test:browser -- --coverage",
+    "clean": "shx rm -rf .nyc_output coverage lib",
+    "lint": "npm run lint:typescript && npm run lint:javascript",
+    "lint:typescript": "tslint -p tsconfig.json",
+    "lint:javascript": "eslint test",
+    "build": "tsc",
+    "test": "karma start --single-run && npm run lint",
+    "coverage": "nyc --reporter=text --reporter=lcov karma start --single-run",
     "upgrade": "npm-check -u",
-    "bump": "bump --prompt --grep dist/* --tag --push --all",
-    "release": "npm run upgrade && npm run build && npm test && npm run bump"
+    "bump": "bump --prompt --tag --push --all",
+    "release": "npm run upgrade && npm run clean && npm run build && npm test && npm run bump"
   },
   "devDependencies": {
+    "@types/karma": "^3.0.1",
+    "@types/node": "^11.9.3",
+    "@types/temp": "^0.8.32",
     "chai": "^4.2.0",
     "coveralls": "^3.0.2",
     "eslint": "^5.6.1",
-    "eslint-config-modular": "^5.0.1",
-    "karma": "^3.0.0",
-    "karma-chai": "^0.1.0",
-    "karma-chrome-launcher": "^2.0.0",
+    "eslint-config-modular": "^7.0.0",
+    "karma": "^4.0.0",
     "karma-cli": "^2.0.0",
-    "karma-coverage": "^1.1.2",
-    "karma-edge-launcher": "^0.4.2",
-    "karma-firefox-launcher": "^1.0.0",
-    "karma-ie-launcher": "^1.0.0",
-    "karma-mocha": "^1.2.0",
-    "karma-safari-launcher": "^1.0.0",
-    "karma-sauce-launcher": "^1.1.0",
-    "karma-verbose-reporter": "0.0.6",
+    "karma-config": "^1.4.1",
     "mocha": "^5.2.0",
     "npm-check": "^5.9.0",
-    "nyc": "^13.0.1",
-    "simplifyify": "^7.0.1",
-    "version-bump-prompt": "^4.2.1"
+    "nyc": "^13.2.0",
+    "shx": "^0.3.2",
+    "tslint": "^5.12.1",
+    "tslint-modular": "^1.2.0",
+    "typescript": "^3.3.3",
+    "typescript-tslint-plugin": "^0.3.1",
+    "version-bump-prompt": "^4.2.2"
   },
   "dependencies": {
-    "temp": "^0.8.3"
+    "host-environment": "^1.1.0",
+    "temp": "^0.9.0"
   }
 }

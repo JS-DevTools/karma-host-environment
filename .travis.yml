@@ -5,52 +5,40 @@
 
 filter_secrets: false
 language: node_js
-
-node_js:
-  - 10
-  - 8
-  - 6
-
-os:
-  - linux
-  - osx
-  - windows
+node_js: 10
 
 before_script:
   # Link the package to itself (so Karma and Mocha can find it)
   - npm link
   - npm link karma-host-environment
 
-script: npm run lint && npm run coverage:node
+  - npm run lint
+  - npm run build
+
+script:
+  - npm run coverage
 
 after_success:
-  # concatenate all code-coverage data into a single file
-  - ls -R1 coverage/*/lcov.info
-  - cat coverage/*/lcov.info > ./coverage/lcov.info
-
   # send code-coverage data to Coveralls
   - cat ./coverage/lcov.info | coveralls
 
 jobs:
   include:
-    - name: Browser tests (Linux)
+    - name: Linux
       os: linux
-      script: npm run coverage:browser
       addons:
         firefox: latest
         chrome: stable
 
-    - name: Browser tests (Mac)
+    - name: MacOS
       os: osx
-      script: npm run coverage:browser
       addons:
         firefox: latest
         chrome: stable
 
-    - name: Browser tests (Windows via SauceLabs)
+    - name: Windows via SauceLabs
       os: linux
-      script: npm run coverage:browser
-      env: WINDOWS=true
+      env: KARMA_PLATFORM=win32
 
     - stage: Deploy
       name: Publish to npm

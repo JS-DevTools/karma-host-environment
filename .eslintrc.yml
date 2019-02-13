@@ -9,7 +9,4 @@ extends:
   - modular/style
   - modular/browser
   - modular/node
-  - modular/es5
-
-globals:
-  host: true
+  - modular/es6
