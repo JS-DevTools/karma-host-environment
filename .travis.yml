@@ -6,6 +6,10 @@
 filter_secrets: false
 language: node_js
 
+addons:
+  firefox: latest
+  chrome: stable
+
 node_js:
   - 10
   - 8
@@ -14,7 +18,13 @@ node_js:
 os:
   - linux
   - osx
-  - windows
+
+matrix:
+  include:
+    - name: Windows via SauceLabs
+      os: linux
+      node_js: 10
+      env: KARMA_PLATFORM=windows
 
 before_script:
   # Link the package to itself (so Karma and Mocha can find it)
