@@ -5,7 +5,16 @@
 
 filter_secrets: false
 language: node_js
-node_js: 10
+
+node_js:
+  - 10
+  - 8
+  - 6
+
+os:
+  - linux
+  - osx
+  - windows
 
 before_script:
   # Link the package to itself (so Karma and Mocha can find it)
@@ -24,22 +33,6 @@ after_success:
 
 jobs:
   include:
-    - name: Linux
-      os: linux
-      addons:
-        firefox: latest
-        chrome: stable
-
-    - name: MacOS
-      os: osx
-      addons:
-        firefox: latest
-        chrome: stable
-
-    - name: Windows via SauceLabs
-      os: linux
-      env: KARMA_PLATFORM=win32
-
     - stage: Deploy
       name: Publish to npm
       script: npm run build
