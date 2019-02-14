@@ -11,7 +11,9 @@ Karma Host Environment
 [![OS and Browser Compatibility](https://jsdevtools.org/img/badges/ci-badges-with-ie.svg)](https://travis-ci.com/JS-DevTools/karma-host-environment)
 
 
-Karma Host Environment lets you access host info like operating system, browser version, and even **environment variables** in your browser tests.
+[**Host Environment**](https://jsdevtools.org/host-environment/) is a library that makes it easy to detect whether your code is running in Node.js or a web browser, Windows or Mac, Internet Explorer or Chrome, etc.
+
+**Karma Host Environment** is a companion to Host Environment, specifically for the [Karma test runner](https://karma-runner.github.io/3.0/index.html).  It allows you to detect not only the browser that your tests are running in, but also information about the host server, such as the operating system, Node.js version, and even environment variables.
 
 
 
@@ -19,6 +21,8 @@ Example
 --------------------------
 
 ```javascript
+import host from "host-environment";
+
 if (host.env.CI) {
   // Setup CI test fixtures
 }
@@ -58,10 +62,10 @@ Related Projects
 
 Installation
 --------------------------
-Install using [npm](https://docs.npmjs.com/about-npm/).  Be sure to install [karma](https://karma-runner.github.io/3.0/index.html) and [karma-cli](https://www.npmjs.com/package/karma-cli) too.
+Use [npm](https://docs.npmjs.com/about-npm/) or [yarn](https://yarnpkg.com) to install `host-environment` **and** `karma-host-environment` as development dependencies:
 
 ```bash
-npm install karma karma-cli karma-host-environment
+npm install --save-dev host-environment karma-host-environment
 ```
 
 
@@ -75,7 +79,7 @@ Usage
 ```javascript
 module.exports = function(config) {
   config.set({
-    frameworks: ['host-environment'],
+    frameworks: ["host-environment"],
     ...
   });
 };
@@ -85,9 +89,14 @@ module.exports = function(config) {
 
 API
 --------------------------
-Karma Host Environment uses [host-environment](https://jsdevtools.org/host-environment/) under the hood, so you have access to all the [same properties](https://jsdevtools.org/host-environment/#api).  The `host` object is exposed as a global variable, so you can access it anywhere.  Or, if you prefer, you can `import` or `require()` it from `"host-environment"`.
+Import [host-environment](https://jsdevtools.org/host-environment/) as you normally would:
 
-### `host` object
+```javascript
+import host from "host-environment";
+```
+
+### The `host` object
+You can use [all of the `host` properties](https://jsdevtools.org/host-environment/#api) as usual:
 
 - [`host.global`](https://github.com/JS-DevTools/host-environment#hostglobal)
 - [`host.os`](https://github.com/JS-DevTools/host-environment#hostos)
@@ -95,12 +104,35 @@ Karma Host Environment uses [host-environment](https://jsdevtools.org/host-envir
 - [`host.node`](https://github.com/JS-DevTools/host-environment#hostnode)
 - [`host.browser`](https://github.com/JS-DevTools/host-environment#hostbrowser)
 
+### The `host.env` property
+Normally the `host.env` property would be an empty object when running in a web browser, since web browsers don't have access to environment variables.  But Karma Host Environment exposes the host server's environment variables, so you can use `host.env` just as you would if you were running in Node.js:
 
-In addition, Karma Host Environment adds an additional property:
+```javascript
+if (host.env.CI) {
+  // Setup CI test fixtures
+}
 
-- `host.karma`<br>
-  This property is `true` when running in Karma, or in a web page that is hosted by Karma.
+if (host.env.QUICK_TEST) {
+  // Skip long-running tests
+}
+```
 
+### The `host.karma` property
+In addition to all the usual `host` properties, Karma Host Environment adds an additional `host.karma` property.  This object exposes all the `host` properties of the Karma server itself, such as the operating system, Node.js version, environmenv variables, etc.
+
+```javascript
+if (host.karma) {
+  // We're running in Karma
+
+  if (host.karma.node.version > 10) {
+    // The server is running in Node v10+
+  }
+
+  if (host.karma.os.windows) {
+    // The server is a Windows OS
+  }
+}
+```
 
 
 Contributing
