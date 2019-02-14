@@ -1,6 +1,6 @@
 {
   "name": "karma-host-environment",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Access host info (OS, browser version, environment variables) in browser tests",
   "keywords": [
     "karma",
