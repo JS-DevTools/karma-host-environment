@@ -42,9 +42,9 @@
     "release": "npm run upgrade && npm run clean && npm run build && npm test && npm run bump"
   },
   "devDependencies": {
-    "@types/karma": "^3.0.1",
+    "@types/karma": "^3.0.2",
     "@types/node": "^11.9.3",
-    "@types/temp": "^0.8.32",
+    "@types/temp": "^0.8.33",
     "chai": "^4.2.0",
     "coveralls": "^3.0.2",
     "eslint": "^5.6.1",
