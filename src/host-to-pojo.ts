@@ -1,6 +1,7 @@
 import host from "host-environment";
 
-type POJO = Record<string, unknown>;
+// tslint:disable-next-line: no-any
+type POJO = Record<string, any>;
 
 /**
  * Returns a copy of the `host` object as a POJO (plain old JavaScript object)
