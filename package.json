@@ -35,10 +35,11 @@
     "lint:typescript": "tslint -p tsconfig.json",
     "lint:javascript": "eslint test",
     "build": "tsc",
+    "watch": "tsc --watch",
     "test": "karma start --single-run && npm run lint",
     "coverage": "nyc --reporter=text --reporter=lcov karma start --single-run",
     "upgrade": "npm-check -u",
-    "bump": "bump --prompt --tag --push --all",
+    "bump": "bump --tag --push --all",
     "release": "npm run upgrade && npm run clean && npm run build && npm test && npm run bump"
   },
   "devDependencies": {
