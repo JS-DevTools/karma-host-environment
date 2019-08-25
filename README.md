@@ -8,10 +8,10 @@ Karma Host Environment
 [![Dependencies](https://david-dm.org/JS-DevTools/karma-host-environment.svg)](https://david-dm.org/JS-DevTools/karma-host-environment)
 [![License](https://img.shields.io/npm/l/karma-host-environment.svg)](LICENSE)
 
-[![OS and Browser Compatibility](https://jsdevtools.org/img/badges/ci-badges-with-ie.svg)](https://travis-ci.com/JS-DevTools/karma-host-environment)
+[![OS and Browser Compatibility](https://jstools.dev/img/badges/ci-badges-with-ie.svg)](https://travis-ci.com/JS-DevTools/karma-host-environment)
 
 
-[**Host Environment**](https://jsdevtools.org/host-environment/) is a library that makes it easy to detect whether your code is running in Node.js or a web browser, Windows or Mac, Internet Explorer or Chrome, etc.
+[**Host Environment**](https://jstools.dev/host-environment/) is a library that makes it easy to detect whether your code is running in Node.js or a web browser, Windows or Mac, Internet Explorer or Chrome, etc.
 
 **Karma Host Environment** is a companion to Host Environment, specifically for the [Karma test runner](https://karma-runner.github.io/3.0/index.html).  It allows you to detect not only the browser that your tests are running in, but also information about the host server, such as the operating system, Node.js version, and even environment variables.
 
@@ -52,10 +52,10 @@ if (host.node) {
 
 Related Projects
 --------------------------
-- [karma-config](https://jsdevtools.org/karma-config)<br>
+- [karma-config](https://jstools.dev/karma-config)<br>
   Karma configuration builder with sensible defaults to minimize boilerplate
 
-- [host-environment](https://jsdevtools.org/host-environment)<br>
+- [host-environment](https://jstools.dev/host-environment)<br>
   Easily detect what host environment your code is running in
 
 
@@ -89,14 +89,14 @@ module.exports = function(config) {
 
 API
 --------------------------
-Import [host-environment](https://jsdevtools.org/host-environment/) as you normally would:
+Import [host-environment](https://jstools.dev/host-environment/) as you normally would:
 
 ```javascript
 import host from "host-environment";
 ```
 
 ### The `host` object
-You can use [all of the `host` properties](https://jsdevtools.org/host-environment/#api) as usual:
+You can use [all of the `host` properties](https://jstools.dev/host-environment/#api) as usual:
 
 - [`host.global`](https://github.com/JS-DevTools/host-environment#hostglobal)
 - [`host.os`](https://github.com/JS-DevTools/host-environment#hostos)
@@ -167,6 +167,6 @@ Big Thanks To
 --------------------------
 Thanks to these awesome companies for their support of Open Source developers ❤
 
-[![Travis CI](https://jsdevtools.org/img/badges/travis-ci.svg)](https://travis-ci.com)
-[![SauceLabs](https://jsdevtools.org/img/badges/sauce-labs.svg)](https://saucelabs.com)
-[![Coveralls](https://jsdevtools.org/img/badges/coveralls.svg)](https://coveralls.io)
+[![Travis CI](https://jstools.dev/img/badges/travis-ci.svg)](https://travis-ci.com)
+[![SauceLabs](https://jstools.dev/img/badges/sauce-labs.svg)](https://saucelabs.com)
+[![Coveralls](https://jstools.dev/img/badges/coveralls.svg)](https://coveralls.io)

@@ -19,7 +19,7 @@
     "url": "https://jamesmessinger.com"
   },
   "license": "MIT",
-  "homepage": "https://jsdevtools.org/karma-host-environment",
+  "homepage": "https://jstools.dev/karma-host-environment",
   "repository": {
     "type": "git",
     "url": "https://github.com/JS-DevTools/karma-host-environment.git"
