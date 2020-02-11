@@ -16,7 +16,7 @@ on:
     - cron: "0 0 1 * *"
 
 jobs:
-  tests:
+  test:
     name: Karma on ${{ matrix.os }}
     runs-on: ${{ matrix.os }}
     timeout-minutes: 10
@@ -67,9 +67,7 @@ jobs:
     name: Code Coverage
     runs-on: ubuntu-latest
     timeout-minutes: 10
-    needs:
-      - node_tests
-      - browser_tests
+    needs: test
     steps:
       - name: Let Coveralls know that all tests have finished
         uses: coverallsapp/github-action@v1.0.1
@@ -82,9 +80,7 @@ jobs:
     if: github.ref == 'refs/heads/master'
     runs-on: ubuntu-latest
     timeout-minutes: 10
-    needs:
-      - node_tests
-      - browser_tests
+    needs: test
 
     steps:
       - name: Checkout source
