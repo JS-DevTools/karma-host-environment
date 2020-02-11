@@ -4,9 +4,9 @@ Karma Host Environment
 [![Build Status](https://github.com/JS-DevTools/karma-host-environment/workflows/CI-CD/badge.svg)](https://github.com/JS-DevTools/karma-host-environment/blob/master/.github/workflows/CI-CD.yaml)
 [![Coverage Status](https://coveralls.io/repos/github/JS-DevTools/karma-host-environment/badge.svg?branch=master)](https://coveralls.io/github/JS-DevTools/karma-host-environment)
 
-[![npm](https://img.shields.io/npm/v/karma-host-environment.svg)](https://www.npmjs.com/package/karma-host-environment)
+[![npm](https://img.shields.io/npm/v/@jsdevtools/karma-host-environment.svg)](https://www.npmjs.com/package/@jsdevtools/karma-host-environment)
 [![Dependencies](https://david-dm.org/JS-DevTools/karma-host-environment.svg)](https://david-dm.org/JS-DevTools/karma-host-environment)
-[![License](https://img.shields.io/npm/l/karma-host-environment.svg)](LICENSE)
+[![License](https://img.shields.io/npm/l/@jsdevtools/karma-host-environment.svg)](LICENSE)
 
 [![OS and Browser Compatibility](https://jstools.dev/img/badges/ci-badges-with-ie.svg)](https://github.com/JS-DevTools/karma-host-environment/blob/master/.github/workflows/CI-CD.yaml)
 
@@ -62,10 +62,10 @@ Related Projects
 
 Installation
 --------------------------
-Use [npm](https://docs.npmjs.com/about-npm/) or [yarn](https://yarnpkg.com) to install `host-environment` **and** `karma-host-environment` as development dependencies:
+Use [npm](https://docs.npmjs.com/about-npm/) or [yarn](https://yarnpkg.com) to install `@jsdevtools/host-environment` **and** `@jsdevtools/karma-host-environment` as development dependencies:
 
 ```bash
-npm install --save-dev host-environment karma-host-environment
+npm install --save-dev @jsdevtools/host-environment @jsdevtools/karma-host-environment
 ```
 
 
@@ -159,7 +159,7 @@ To build the project locally on your computer:
 
 License
 --------------------------
-karma-host-environment is 100% free and open-source, under the [MIT license](LICENSE). Use it however you want.
+Karma Host Environment is 100% free and open-source, under the [MIT license](LICENSE). Use it however you want.
 
 
 
