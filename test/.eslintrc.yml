@@ -1,2 +1,13 @@
+# ESLint config
+# http://eslint.org/docs/user-guide/configuring
+# https://jstools.dev/eslint-config-modular/
+
+root: true
+
 extends:
-  - modular/test
+  - "@jsdevtools/modular/best-practices"
+  - "@jsdevtools/modular/style"
+  - "@jsdevtools/modular/browser"
+  - "@jsdevtools/modular/node"
+  - "@jsdevtools/modular/es6"
+  - "@jsdevtools/modular/test"
