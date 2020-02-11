@@ -1,0 +1,19 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Run Karma",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceRoot}/node_modules/karma/bin/karma",
+      "args": [
+        "start",
+        "--single-run"
+      ],
+      "outputCapture": "std",
+      "outFiles": [
+        "lib/**/*.js"
+      ]
+    }
+  ]
+}
