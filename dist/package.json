@@ -1,0 +1,36 @@
+{
+  "name": "karma-host-environment",
+  "version": "X.X.X",
+  "description": "Access host info (OS, browser version, environment variables) in browser tests",
+  "keywords": [
+    "karma",
+    "karma-plugin",
+    "karma-framework",
+    "test",
+    "testing",
+    "host",
+    "environment",
+    "browser",
+    "user agent",
+    "environment variables"
+  ],
+  "author": {
+    "name": "James Messinger",
+    "url": "https://jamesmessinger.com"
+  },
+  "license": "MIT",
+  "homepage": "https://jstools.dev/karma-host-environment",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JS-DevTools/karma-host-environment.git"
+  },
+  "main": "index.js",
+  "types": "index.d.ts",
+  "files": [
+    "index.js",
+    "index.d.ts"
+  ],
+  "dependencies": {
+    "@jsdevtools/karma-host-environment": "X.X.X"
+  }
+}
