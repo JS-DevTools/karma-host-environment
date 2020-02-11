@@ -1,4 +1,4 @@
-import { Host } from "host-environment";
+import { Host } from "@jsdevtools/host-environment";
 
 /**
  * Extends the Host interface with information about the Karma server.
