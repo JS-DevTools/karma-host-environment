@@ -1,6 +1,6 @@
-import fs from "fs";
+import * as fs from "fs";
 import { FilePattern } from "karma";
-import temp from "temp";
+import * as temp from "temp";
 import { hostToPOJO } from "./host-to-pojo";
 
 // Dependency injection for Karma
