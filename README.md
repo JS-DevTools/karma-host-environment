@@ -1,14 +1,14 @@
 Karma Host Environment
 ==============================
 
-[![Build Status](https://api.travis-ci.com/JS-DevTools/karma-host-environment.svg?branch=master)](https://travis-ci.com/JS-DevTools/karma-host-environment)
+[![Build Status](https://github.com/JS-DevTools/karma-host-environment/workflows/CI-CD/badge.svg)](https://github.com/JS-DevTools/karma-host-environment/blob/master/.github/workflows/CI-CD.yaml)
 [![Coverage Status](https://coveralls.io/repos/github/JS-DevTools/karma-host-environment/badge.svg?branch=master)](https://coveralls.io/github/JS-DevTools/karma-host-environment)
 
 [![npm](https://img.shields.io/npm/v/karma-host-environment.svg)](https://www.npmjs.com/package/karma-host-environment)
 [![Dependencies](https://david-dm.org/JS-DevTools/karma-host-environment.svg)](https://david-dm.org/JS-DevTools/karma-host-environment)
 [![License](https://img.shields.io/npm/l/karma-host-environment.svg)](LICENSE)
 
-[![OS and Browser Compatibility](https://jstools.dev/img/badges/ci-badges-with-ie.svg)](https://travis-ci.com/JS-DevTools/karma-host-environment)
+[![OS and Browser Compatibility](https://jstools.dev/img/badges/ci-badges-with-ie.svg)](https://github.com/JS-DevTools/karma-host-environment/blob/master/.github/workflows/CI-CD.yaml)
 
 
 [**Host Environment**](https://jstools.dev/host-environment/) is a library that makes it easy to detect whether your code is running in Node.js or a web browser, Windows or Mac, Internet Explorer or Chrome, etc.
