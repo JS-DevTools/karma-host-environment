@@ -6,7 +6,7 @@ const { expect } = require("chai");
 describe("host", function () {
 
   it("should have all of the host-environment fields", function () {
-    expect(host).to.have.keys("global", "os", "env", "node", "browser", "karma", "merge", "toJSON");
+    expect(host).to.have.keys("global", "os", "env", "ci", "node", "browser", "karma", "merge", "toJSON");
     expect(host.global).to.equal(window);
     expect(host.os).to.be.an("object").with.keys("windows", "mac", "linux");
     expect(host.env).to.be.an("object").and.not.empty;
@@ -17,7 +17,7 @@ describe("host", function () {
   });
 
   it("should have the karma-host-environment fields too", function () {
-    expect(host.karma).to.be.an("object").with.keys("global", "os", "env", "node", "browser");
+    expect(host.karma).to.be.an("object").with.keys("global", "os", "env", "ci", "node", "browser");
     expect(host.karma).to.deep.equal(window.host.karma);
   });
 

@@ -15,7 +15,7 @@ describe("window.host", function () {
   });
 
   it("host.karma should be a Host object", function () {
-    expect(window.host.karma).to.have.all.keys("global", "os", "env", "node", "browser");
+    expect(window.host.karma).to.have.all.keys("global", "os", "env", "ci", "node", "browser");
     expect(window.host.karma.global).to.be.an("object").and.not.empty;
     expect(window.host.karma.os).to.be.an("object").with.keys("windows", "mac", "linux");
     expect(window.host.karma.env).to.be.an("object").and.not.empty;
