@@ -21,7 +21,7 @@ Example
 --------------------------
 
 ```javascript
-import host from "host-environment";
+import host from "@jsdevtools/host-environment";
 
 if (host.env.CI) {
   // Setup CI test fixtures
@@ -92,7 +92,7 @@ API
 Import [host-environment](https://jstools.dev/host-environment/) as you normally would:
 
 ```javascript
-import host from "host-environment";
+import host from "@jsdevtools/host-environment";
 ```
 
 ### The `host` object
