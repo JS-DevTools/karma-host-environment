@@ -51,7 +51,6 @@
     "@types/node": "^13.7.0",
     "@types/temp": "^0.8.34",
     "chai": "^4.2.0",
-    "coveralls": "^3.0.6",
     "eslint": "^6.2.2",
     "karma": "^4.2.0",
     "karma-cli": "^2.0.0",
