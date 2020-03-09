@@ -23,8 +23,8 @@ Example
 ```javascript
 import host from "@jsdevtools/host-environment";
 
-if (host.env.CI) {
-  // Setup CI test fixtures
+if (host.ci) {
+  // Setup CI/CD test fixtures
 }
 
 if (host.browser) {
@@ -108,10 +108,6 @@ You can use [all of the `host` properties](https://jstools.dev/host-environment/
 Normally the `host.env` property would be an empty object when running in a web browser, since web browsers don't have access to environment variables.  But Karma Host Environment exposes the host server's environment variables, so you can use `host.env` just as you would if you were running in Node.js:
 
 ```javascript
-if (host.env.CI) {
-  // Setup CI test fixtures
-}
-
 if (host.env.QUICK_TEST) {
   // Skip long-running tests
 }
