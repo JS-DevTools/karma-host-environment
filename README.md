@@ -1,12 +1,13 @@
 Karma Host Environment
 ==============================
 
+[![npm](https://img.shields.io/npm/v/@jsdevtools/karma-host-environment.svg)](https://www.npmjs.com/package/@jsdevtools/karma-host-environment)
+[![License](https://img.shields.io/npm/l/@jsdevtools/karma-host-environment.svg)](LICENSE)
+[![Buy us a tree](https://img.shields.io/badge/Treeware-%F0%9F%8C%B3-lightgreen)](https://plant.treeware.earth/JS-DevTools/karma-host-environment)
+
 [![Build Status](https://github.com/JS-DevTools/karma-host-environment/workflows/CI-CD/badge.svg)](https://github.com/JS-DevTools/karma-host-environment/blob/master/.github/workflows/CI-CD.yaml)
 [![Coverage Status](https://coveralls.io/repos/github/JS-DevTools/karma-host-environment/badge.svg?branch=master)](https://coveralls.io/github/JS-DevTools/karma-host-environment)
-
-[![npm](https://img.shields.io/npm/v/@jsdevtools/karma-host-environment.svg)](https://www.npmjs.com/package/@jsdevtools/karma-host-environment)
 [![Dependencies](https://david-dm.org/JS-DevTools/karma-host-environment.svg)](https://david-dm.org/JS-DevTools/karma-host-environment)
-[![License](https://img.shields.io/npm/l/@jsdevtools/karma-host-environment.svg)](LICENSE)
 
 [![OS and Browser Compatibility](https://jstools.dev/img/badges/ci-badges-with-ie.svg)](https://github.com/JS-DevTools/karma-host-environment/blob/master/.github/workflows/CI-CD.yaml)
 
@@ -156,6 +157,8 @@ To build the project locally on your computer:
 License
 --------------------------
 Karma Host Environment is 100% free and open-source, under the [MIT license](LICENSE). Use it however you want.
+
+This package is [Treeware](http://treeware.earth). If you use it in production, then we ask that you [**buy the world a tree**](https://plant.treeware.earth/JS-DevTools/karma-host-environment) to thank us for our work. By contributing to the Treeware forest you’ll be creating employment for local families and restoring wildlife habitats.
 
 
 
