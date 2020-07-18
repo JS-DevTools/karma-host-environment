@@ -8,10 +8,10 @@ const { host } = require("@jsdevtools/host-environment");
 
 module.exports = karmaConfig({
   browsers: {
-    chrome: true,
-    firefox: host.os.linux,
-    safari: host.os.linux,    // SauceLabs
-    edge: host.os.linux,      // SauceLabs
+    chrome: host.ci ? host.os.linux : true,
+    firefox: host.ci ? host.os.linux : true,
+    safari: host.ci ? host.os.linux : host.os.mac,
+    edge: host.ci ? host.os.linux : host.os.windows,
     ie: host.os.windows,
   },
 });
