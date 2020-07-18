@@ -1,11 +1,13 @@
+/* eslint-disable no-unused-expressions */
+/* eslint-env browser */
 "use strict";
 
 const { host } = require("@jsdevtools/host-environment");
 const { expect } = require("chai");
 
-describe("host", function () {
+describe("host", () => {
 
-  it("should have all of the host-environment fields", function () {
+  it("should have all of the host-environment fields", () => {
     expect(host).to.have.keys("global", "os", "env", "ci", "node", "browser", "karma", "merge", "toJSON");
     expect(host.global).to.equal(window);
     expect(host.os).to.be.an("object").with.keys("windows", "mac", "linux");
@@ -16,12 +18,12 @@ describe("host", function () {
     expect(host.toJSON).to.be.a("function");
   });
 
-  it("should have the karma-host-environment fields too", function () {
+  it("should have the karma-host-environment fields too", () => {
     expect(host.karma).to.be.an("object").with.keys("global", "os", "env", "ci", "node", "browser");
     expect(host.karma).to.deep.equal(window.host.karma);
   });
 
-  it("should have environment variables", function () {
+  it("should have environment variables", () => {
     expect(host.env).not.to.be.empty;
     expect(host.env).to.deep.equal(host.karma.env);
 

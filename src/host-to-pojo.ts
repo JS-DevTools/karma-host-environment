@@ -1,6 +1,5 @@
 import host from "@jsdevtools/host-environment";
 
-// tslint:disable-next-line: no-any
 type POJO = Record<string, any>;
 
 /**

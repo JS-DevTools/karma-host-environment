@@ -1,4 +1,3 @@
-// tslint:disable: no-default-export
 import { karmaPlugin } from "./karma-plugin";
 
 export { KarmaHost } from "./karma-host";
@@ -10,5 +9,5 @@ export default {
 
 // CommonJS default export hack
 if (typeof module === "object" && typeof module.exports === "object") {
-  module.exports = Object.assign(module.exports.default, module.exports);  // tslint:disable-line: no-unsafe-any
+  module.exports = Object.assign(module.exports.default, module.exports);
 }
