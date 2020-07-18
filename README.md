@@ -5,11 +5,11 @@ Karma Host Environment
 [![License](https://img.shields.io/npm/l/@jsdevtools/karma-host-environment.svg)](LICENSE)
 [![Buy us a tree](https://img.shields.io/badge/Treeware-%F0%9F%8C%B3-lightgreen)](https://plant.treeware.earth/JS-DevTools/karma-host-environment)
 
-[![Build Status](https://github.com/JS-DevTools/karma-host-environment/workflows/CI-CD/badge.svg)](https://github.com/JS-DevTools/karma-host-environment/blob/master/.github/workflows/CI-CD.yaml)
+[![Build Status](https://github.com/JS-DevTools/karma-host-environment/workflows/CI-CD/badge.svg)](https://github.com/JS-DevTools/karma-host-environment/actions)
 [![Coverage Status](https://coveralls.io/repos/github/JS-DevTools/karma-host-environment/badge.svg?branch=master)](https://coveralls.io/github/JS-DevTools/karma-host-environment)
 [![Dependencies](https://david-dm.org/JS-DevTools/karma-host-environment.svg)](https://david-dm.org/JS-DevTools/karma-host-environment)
 
-[![OS and Browser Compatibility](https://jstools.dev/img/badges/ci-badges-with-ie.svg)](https://github.com/JS-DevTools/karma-host-environment/blob/master/.github/workflows/CI-CD.yaml)
+[![OS and Browser Compatibility](https://jstools.dev/img/badges/ci-badges-with-ie.svg)](https://github.com/JS-DevTools/karma-host-environment/actions)
 
 
 [**Host Environment**](https://jstools.dev/host-environment/) is a library that makes it easy to detect whether your code is running in Node.js or a web browser, Windows or Mac, Internet Explorer or Chrome, etc.
@@ -134,7 +134,7 @@ if (host.karma) {
 
 Contributing
 --------------------------
-Contributions, enhancements, and bug-fixes are welcome!  [File an issue](https://github.com/JS-DevTools/karma-host-environment/issues) on GitHub and [submit a pull request](https://github.com/JS-DevTools/karma-host-environment/pulls).
+Contributions, enhancements, and bug-fixes are welcome!  [Open an issue](https://github.com/JS-DevTools/karma-host-environment/issues) on GitHub and [submit a pull request](https://github.com/JS-DevTools/karma-host-environment/pulls).
 
 #### Building
 To build the project locally on your computer:
